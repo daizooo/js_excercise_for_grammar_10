@@ -18,7 +18,7 @@ const removeMaxNumberFromArray = (_numbers) => {
   let indexOfMaxNumber = 0;
   let currentMaxNumber;
   copiedNumbers.forEach((number, index) => {
-    if(currentMaxNumber === undefined || currentMaxNumber < number) {
+    if (currentMaxNumber === undefined || currentMaxNumber < number) {
       currentMaxNumber = number;
       indexOfMaxNumber = index;
     }
