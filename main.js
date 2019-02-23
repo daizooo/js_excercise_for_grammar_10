@@ -25,13 +25,15 @@ const removeMaxNumberFromArray = (_numbers) => {
     }
   });
   copiedNumbers.splice(indexOfMaxNumber, 1);
-  return _numbers;
+  return copiedNumbers;
 };
 
 const numbers = [10, 500, 234, 965, 221];
 const returnedNumbers = removeMaxNumberFromArray(numbers);
+
 console.log(`removeMaxNumberFromArray関数の戻り値は[${returnedNumbers}]である`);
 console.log(`removeMaxNumberFromArray関数を実行した後の配列numbersの内容は${numbers}のままである`);
+
 
 
 
@@ -56,19 +58,15 @@ console.log(`removeMaxNumberFromArray関数を実行した後の配列numbersの
  *       - https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  */
 
+
 const sortNumbers = (_numbers) => {
   const copiedNumbers = _numbers.slice();
-  for (let i = 0; i < copiedNumbers.length; i++) {
-    for (let j = copiedNumbers.length - 1; i < j; j--) {
-      if (copiedNumbers[j] < copiedNumbers[j - 1]) {
-        let tmp = copiedNumbers[j];
-        copiedNumbers[j] = copiedNumbers[j - 1];
-        copiedNumbers[j - 1] = tmp;
-      }
-    }
-  }
+  copiedNumbers.sort(function (a, b) {
+    return a - b;
+  })
   return copiedNumbers;
 };
+
 
 const beforeSortNumbers = [1000, 10, 500, 234, 965, 221, 102];
 const afterSortNumbers = sortNumbers(beforeSortNumbers);
