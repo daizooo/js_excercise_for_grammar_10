@@ -13,10 +13,9 @@ const returnedArray = removeMaxNumberFromArray(array);
 console.log(array);
 console.log(returnedArray);
 
-
 function sortNumbers(_array) {
   const copiedArray1 = _array.slice();
-  copiedArray1.sort(function (a, b) {
+  copiedArray1.sort(function(a, b) {
     return b - a;
   });
   return copiedArray1;
